@@ -1,0 +1,112 @@
+/* style.css - regola aggiornata */
+@font-face {
+    font-family: 'HK Nova';
+    src: url('fonts/hk-nova-semibold-r.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    position: relative;
+    font-family: 'HK Nova', sans-serif;
+    font-weight: 600;
+    background-color: #F5F5F5;
+    color: #1a1a2e;
+    text-align: center;
+    padding: 60px 20px;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.black-square {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid gray;
+    background-color: black;
+    border-radius: 6px;
+}
+
+.red-square {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    background-color: red;
+    border-radius: 6px;
+}
+
+.white-square {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.blue-square {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    background-color: #1e88e5;
+    border-radius: 6px;
+}
+
+.logo {
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: black;
+}
+
+.subtitle {
+    font-size: 24px;
+    color: black;
+    margin-top: 10px;
+}
+
+.coming {
+    font-size: 20px;
+    color: #666;
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    padding-top: 30px;
+    max-width: 400px;
+}
+
+.year {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #999;
+}
+
+.letter-y {
+    color: #1e88e5;
+}
+
+.letter-x {
+    color: #e53935;
+}
+
+.tm {
+    font-size: 0.125em;
+    margin-left: 0px;
+    color: #e53935;
+    position: relative;
+    top: -1.0em;   /* più negativo = più in alto; prova -0.2em, -0.4em... */
+}
