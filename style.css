@@ -31,6 +31,7 @@ body {
     padding: 0 20px;
     margin: 0;
     min-height: 100vh;
+    padding-bottom: 300vh;   /* <-- ALTEZZA DELLA PAGINA */
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -47,10 +48,10 @@ body {
     height: 20px;
     border-radius: 6px;
     z-index: 100;
-    cursor: pointer; /* indica che sono cliccabili */
+    cursor: pointer;
+    transition: border-width 0.2s ease; /* transizione fluida */
 }
 
-/* Hover: bordo aumenta di 1px (da 2 a 3) */
 .black-square:hover,
 .red-square:hover,
 .white-square:hover,
@@ -58,7 +59,6 @@ body {
     border-width: 3px;
 }
 
-/* Click: bordo aumenta ancora di 1 (da 3 a 4) */
 .black-square.clicked,
 .red-square.clicked,
 .white-square.clicked,
@@ -66,7 +66,6 @@ body {
     border-width: 4px;
 }
 
-/* ===== STILI INDIVIDUALI ===== */
 .black-square {
     top: 20px;
     right: 50px;
@@ -142,18 +141,15 @@ body {
     transition: color 0.2s;
 }
 
-/* ===== HOVER SPECIFICI ===== */
 .nav-home:hover,
 .nav-dona:hover {
-    color: #1e88e5;   /* blu */
+    color: #1e88e5;
 }
-
 .nav-versioni:hover,
 .nav-assistenza:hover {
-    color: #e53935;   /* rosso */
+    color: #e53935;
 }
 
-/* ===== HOME IN GRASSETTO ===== */
 .nav-home {
     font-weight: 700;
 }
@@ -196,16 +192,159 @@ body {
     margin-top: -10px;
 }
 
-/* ===== BLOCCO "Introduzione / Presto disponibile" ===== */
+/* ===== BLOCCO INTRODUZIONE ===== */
 .coming {
-    font-size: 48px;
-    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 700px;          /* aumentato per dare più respiro */
+    width: 100%;
     margin-top: 1px;
-    padding-top: 0px;
-    max-width: 400px;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
-/* ===== COPYRIGHT IN FONDO ALLA PAGINA ===== */
+.coming-intro {
+    font-size: 48px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.coming-body {
+    font-size: 16px;
+    font-weight: 400;
+    color: #222;
+    line-height: 1.7;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.coming-body p {
+    margin-bottom: 12px;
+}
+.coming-body p:last-child {
+    margin-bottom: 0;
+}
+
+.coming-body .first {
+    margin-bottom: 25px;
+}
+
+.coming-body .second {
+    margin-bottom: 25px;
+}
+
+.coming-body .third {
+    margin-bottom: 25px;
+}
+
+.coming-body .fourth {
+    margin-bottom: 25px;
+}
+.coming-body .fifth {
+    margin-bottom: 25px;
+}
+.coming-body .sixth {
+    margin-bottom: 25px;
+}
+.coming-body .seventh {
+    margin-bottom: 25px;
+}
+.coming-body .eighth {
+    margin-bottom: 25px;
+}
+.coming-body .ninth {
+    margin-bottom: 25px;
+}
+.coming-body .tenth {
+    margin-bottom: 25px;
+}
+.coming-body .eleventh {
+    margin-bottom: 25px;
+}
+.coming-body .twelfth {
+    margin-bottom: 25px;
+}
+.coming-body .thirteenth {
+    margin-bottom: 25px;
+}
+
+/* ===== DOWNLOAD ===== */
+.download {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 700px;
+    width: 100%;
+    margin-top: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.download-intro {
+    font-size: 48px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 20px;
+    align-self: center;
+    padding-right: 45px;
+}
+
+.download-body {
+    font-size: 16px;
+    font-weight: 400;
+    color: #222;
+    line-height: 1.7;
+    text-align: left;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Logo Windows sotto il titolo */
+.windows-logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 12px;
+    align-self: center;
+    padding-right: 90px;
+}
+
+.windows-logo {
+    height: 75px;
+    width: auto;
+    display: block;
+}
+
+.apple-logo {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.download-btn {
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    align-self: flex-start;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.download-btn:hover {
+    background-color: #1565c0;
+}
+
+/* ===== COPYRIGHT ===== */
 .year {
     font-size: 14px;
     color: #999;
@@ -215,7 +354,7 @@ body {
     width: 100%;
 }
 
-/* ===== LETTERE COLORATE E ™ ===== */
+/* ===== LETTERE E TM ===== */
 .letter-y { color: #1e88e5; }
 .letter-x { color: #e53935; }
 
@@ -225,12 +364,4 @@ body {
     color: #e53935;
     position: relative;
     top: -1.0em;
-}
-
-/* ===== SPAZIATORE PER LO SCROLL ===== */
-.spacer {
-    height: 300vh;
-    width: 1px;
-    display: block;
-    pointer-events: none;
 }

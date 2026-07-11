@@ -12,24 +12,38 @@ function updatePosition() {
 
     const scrollY = window.scrollY;
     const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-    const maxScroll = documentHeight - windowHeight;
 
-    if (maxScroll <= 0) return;
+    // Distanza di scroll in cui il logotype scompare (es. 300px o 60% della viewport)
+    const scrollForLogotype = Math.min(300, window.innerHeight * 0.6); // 300px o 60% viewport
 
-    const scrollPercent = Math.min(scrollY / maxScroll, 1);
-    const newHeight = maxHeight - (maxHeight - minHeight) * scrollPercent;
+    // Calcola se siamo nella fase di scomparsa del logotype
+    const logotypeProgress = Math.min(scrollY / scrollForLogotype, 1);
+    const newHeight = maxHeight - (maxHeight - minHeight) * logotypeProgress;
 
+    // Aggiorna altezza e opacità del logotype
     headerImg.style.height = newHeight + 'px';
     headerImg.style.opacity = newHeight / maxHeight;
-    contentWrapper.style.top = (topHeader + newHeight + spacing) + 'px';
+
+    // Calcola la posizione del wrapper:
+    // - durante la scomparsa: segue il logotype (come prima)
+    // - dopo la scomparsa: continua a salire con lo scroll
+    let wrapperTop;
+    if (scrollY < scrollForLogotype) {
+        wrapperTop = topHeader + newHeight + spacing;
+    } else {
+        // Dopo la scomparsa, il wrapper sale di 1px per ogni px di scroll aggiuntivo
+        const extraScroll = scrollY - scrollForLogotype;
+        wrapperTop = topHeader + spacing - extraScroll;
+        // Limite: non può scendere sotto un certo valore (per non sparire del tutto)
+        // Lo lasciamo andare fino a un minimo, ma possiamo anche non limitarlo
+    }
+
+    contentWrapper.style.top = wrapperTop + 'px';
 }
 
-// Gestione click sui quadratini: almeno uno deve rimanere selezionato
+// Gestione click sui quadratini (invariata)
 document.addEventListener('DOMContentLoaded', function() {
     const squares = document.querySelectorAll('.black-square, .red-square, .white-square, .blue-square');
-    
-    // Imposta il quadrato BIANCO come selezionato di default (border 4)
     const whiteSquare = document.querySelector('.white-square');
     if (whiteSquare) {
         whiteSquare.classList.add('clicked');
@@ -37,11 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     squares.forEach(square => {
         square.addEventListener('click', function() {
-            // Se questo quadrato è già attivo, non fare nulla (per mantenere almeno uno selezionato)
             if (this.classList.contains('clicked')) {
                 return;
             } else {
-                // Altrimenti rimuovi la classe da tutti e aggiungila a questo
                 squares.forEach(s => s.classList.remove('clicked'));
                 this.classList.add('clicked');
             }
