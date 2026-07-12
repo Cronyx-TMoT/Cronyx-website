@@ -60,18 +60,42 @@
             <div class="download-intro">Download</div>
             <div class="download-body">
                  <div class="windows-logo-wrapper">
-                    <img src="images/Windows_Logo.png" alt="Windows Logo" class="windows-logo" />
-                    <img src="images/Apple_Logo.png" alt="Apple Logo" class="apple-logo" />
+                    <button class="logo-btn windows-btn">
+                        <img src="images/Windows_Logo.png" alt="Windows Logo" class="windows-logo"/>
+                    </button>
+                    <button class="logo-btn apple-btn">
+                        <img src="images/Apple_Logo.png" alt="Apple Logo" class="apple-logo"/>
+                    </button>
                  </div>
-                <button class="download-btn">Download per Windows</button>
-                <button class="download-btn">Download per macOS</button>
-                <button class="download-btn">Download per Linux</button>
+                <button class="download-btn btn-store">
+                    <div class="btn-content">
+                        <span class="btn-main-text">Microsoft Store</span>
+                        <img src="images/MS_Logo.png" alt="MS Logo" class="ms-logo"/>
+                    </div>
+                </button>
+                <button class="download-btn btn-x64">
+                    <span class="btn-main-text">Windows (x64)</span>
+                    <span class="btn-sub-text">Ora</span>
+                </button>
+                <button class="download-btn btn-x86">
+                    <span class="btn-main-text">Windows (x86)</span>
+                    <span class="btn-sub-text">Ora</span>
+                </button>
+                <button class="download-btn btn-arm64">
+                    <span class="btn-main-text">Windows (ARM 64)</span>
+                    <span class="btn-sub-text">Ora</span>
+                </button>
             </div>
         </div>
-    </div>
 
-    <!-- COPYRIGHT IN FONDO ALLA PAGINA -->
-    <div class="year">© 2025 Cronyx. All rights reserved.</div>
+        <!-- LOGO DISCORD (INDIPENDENTE DALLA SEZIONE DOWNLOAD) -->
+        <div class="discord-wrapper">
+            <img src="images/Discord_Logo.png" alt="Discord Logo" class="discord-logo"/>
+        </div>
+
+        <!-- COPYRIGHT IN FONDO ALLA PAGINA -->
+        <div class="year">© 2025 Cronyx. All rights reserved.</div>
+    </div>
 
     <script src="script.js"></script>
 </body>

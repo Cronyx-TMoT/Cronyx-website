@@ -1,4 +1,6 @@
-/* Caricamento del peso SemiBold (600) */
+/* ============================================
+   CARICAMENTO FONT
+   ============================================ */
 @font-face {
     font-family: 'HK Nova';
     src: url('fonts/hk-nova-semibold-r.ttf') format('truetype');
@@ -7,7 +9,6 @@
     font-display: swap;
 }
 
-/* Caricamento del peso Bold (700) */
 @font-face {
     font-family: 'HK Nova';
     src: url('fonts/hk-nova-bold-r.ttf') format('truetype');
@@ -16,6 +17,9 @@
     font-display: swap;
 }
 
+/* ============================================
+   RESET E IMPOSTAZIONI GENERALI
+   ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -31,14 +35,16 @@ body {
     padding: 0 20px;
     margin: 0;
     min-height: 100vh;
-    padding-bottom: 300vh;   /* <-- ALTEZZA DELLA PAGINA */
+    padding-bottom: 312.5vh;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* ===== QUADRATI FISSI ===== */
+/* ============================================
+   QUADRATI FISSI (alto a destra)
+   ============================================ */
 .black-square,
 .red-square,
 .white-square,
@@ -49,7 +55,7 @@ body {
     border-radius: 6px;
     z-index: 100;
     cursor: pointer;
-    transition: border-width 0.2s ease; /* transizione fluida */
+    transition: border-width 0.2s ease;
 }
 
 .black-square:hover,
@@ -91,7 +97,9 @@ body {
     background-color: #1e88e5;
 }
 
-/* ===== HEADER (IMMAGINE FISSA) ===== */
+/* ============================================
+   HEADER – IMMAGINE FISSA
+   ============================================ */
 .header {
     position: fixed;
     top: 90px;
@@ -109,7 +117,9 @@ body {
     transition: height 0.05s linear, opacity 0.1s ease;
 }
 
-/* ===== CONTENITORE FISSO PER IL CONTENUTO ===== */
+/* ============================================
+   CONTENITORE FISSO PER IL CONTENUTO
+   ============================================ */
 .content-wrapper {
     position: fixed;
     left: 0;
@@ -125,7 +135,9 @@ body {
     transition: top 0.05s linear;
 }
 
-/* ===== NAV-BAR ===== */
+/* ============================================
+   NAV-BAR
+   ============================================ */
 .nav-bar {
     display: flex;
     justify-content: space-around;
@@ -154,14 +166,16 @@ body {
     font-weight: 700;
 }
 
-/* ===== MAIN CONTENT ===== */
+/* ============================================
+   MAIN CONTENT (logo + testo)
+   ============================================ */
 .main-content {
     display: flex;
     align-items: center;
-    gap: 0px;
+    gap: 0;
     align-self: flex-start;
     padding-left: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .logo-img {
@@ -192,12 +206,14 @@ body {
     margin-top: -10px;
 }
 
-/* ===== BLOCCO INTRODUZIONE ===== */
+/* ============================================
+   INTRODUZIONE
+   ============================================ */
 .coming {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 700px;          /* aumentato per dare più respiro */
+    max-width: 700px;
     width: 100%;
     margin-top: 1px;
     padding: 0 10px;
@@ -228,50 +244,23 @@ body {
     margin-bottom: 0;
 }
 
-.coming-body .first {
-    margin-bottom: 25px;
-}
+.coming-body .first { margin-bottom: 25px; }
+.coming-body .second { margin-bottom: 25px; }
+.coming-body .third { margin-bottom: 25px; }
+.coming-body .fourth { margin-bottom: 25px; }
+.coming-body .fifth { margin-bottom: 25px; }
+.coming-body .sixth { margin-bottom: 25px; }
+.coming-body .seventh { margin-bottom: 25px; }
+.coming-body .eighth { margin-bottom: 25px; }
+.coming-body .ninth { margin-bottom: 25px; }
+.coming-body .tenth { margin-bottom: 25px; }
+.coming-body .eleventh { margin-bottom: 25px; }
+.coming-body .twelfth { margin-bottom: 25px; }
+.coming-body .thirteenth { margin-bottom: 25px; }
 
-.coming-body .second {
-    margin-bottom: 25px;
-}
-
-.coming-body .third {
-    margin-bottom: 25px;
-}
-
-.coming-body .fourth {
-    margin-bottom: 25px;
-}
-.coming-body .fifth {
-    margin-bottom: 25px;
-}
-.coming-body .sixth {
-    margin-bottom: 25px;
-}
-.coming-body .seventh {
-    margin-bottom: 25px;
-}
-.coming-body .eighth {
-    margin-bottom: 25px;
-}
-.coming-body .ninth {
-    margin-bottom: 25px;
-}
-.coming-body .tenth {
-    margin-bottom: 25px;
-}
-.coming-body .eleventh {
-    margin-bottom: 25px;
-}
-.coming-body .twelfth {
-    margin-bottom: 25px;
-}
-.coming-body .thirteenth {
-    margin-bottom: 25px;
-}
-
-/* ===== DOWNLOAD ===== */
+/* ============================================
+   DOWNLOAD
+   ============================================ */
 .download {
     display: flex;
     flex-direction: column;
@@ -305,7 +294,7 @@ body {
     width: 100%;
 }
 
-/* Logo Windows sotto il titolo */
+/* ===== Loghi Windows e Apple (ora pulsanti) ===== */
 .windows-logo-wrapper {
     display: flex;
     align-items: center;
@@ -315,52 +304,155 @@ body {
     padding-right: 90px;
 }
 
-.windows-logo {
+.logo-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.logo-btn:hover {
+    opacity: 0.7;
+}
+
+.windows-btn .windows-logo {
     height: 75px;
     width: auto;
     display: block;
 }
 
-.apple-logo {
+.apple-btn .apple-logo {
     height: 40px;
     width: auto;
     display: block;
 }
 
+/* ===== Pulsanti di download ===== */
 .download-btn {
-    background-color: #1e88e5;
-    color: white;
+    font-family: 'HK Nova', 'Segoe UI', sans-serif;
     border: none;
-    padding: 10px 20px;
     cursor: pointer;
-    align-self: flex-start;
-    border-radius: 4px;
+    align-self: center;
+    border-radius: 30px;
     font-size: 14px;
     font-weight: 600;
     transition: background-color 0.2s;
+    margin-right: 70px;
+    width: 360px;
+    height: 100px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #1e88e5;
+    color: white;
 }
-
 .download-btn:hover {
     background-color: #1565c0;
 }
 
-/* ===== COPYRIGHT ===== */
+.btn-store,
+.btn-x64 {
+    background-color: #000;
+    color: #fff;
+}
+.btn-store:hover,
+.btn-x64:hover {
+    background-color: #333;
+}
+
+.btn-arm64 {
+    background-color: #e53935;
+    color: #fff;
+}
+.btn-arm64:hover {
+    background-color: #c62828;
+}
+
+.btn-store .btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.ms-logo {
+    height: 30px;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+    margin-right: 40px;
+}
+
+.btn-main-text {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.btn-sub-text {
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0.8;
+    line-height: 1.2;
+    margin-top: 2px;
+}
+
+/* ============================================
+   LOGO DISCORD (fuori dalla sezione Download)
+   ============================================ */
+.discord-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.discord-logo {
+    height: 62.5px;
+    width: auto;
+    display: block;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.discord-logo:hover {
+    opacity: 1;
+}
+
+/* ============================================
+   COPYRIGHT (in basso nel wrapper)
+   ============================================ */
 .year {
     font-size: 14px;
     color: #999;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
     width: 100%;
 }
 
-/* ===== LETTERE E TM ===== */
-.letter-y { color: #1e88e5; }
-.letter-x { color: #e53935; }
+/* ============================================
+   LETTERE COLORATE E TM
+   ============================================ */
+.letter-y {
+    color: #1e88e5;
+}
+.letter-x {
+    color: #e53935;
+}
 
 .tm {
     font-size: 0.125em;
-    margin-left: 0px;
+    margin-left: 0;
     color: #e53935;
     position: relative;
     top: -1.0em;
