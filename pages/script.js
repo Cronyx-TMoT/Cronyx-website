@@ -87,7 +87,7 @@ function initNavButtons() {
     
     if (versionsBtn) {
         versionsBtn.addEventListener('click', function() {
-            window.location.href = 'versions.html';
+            window.location.href = 'pages/versions.html';
         });
     }
 }
