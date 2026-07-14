@@ -1,0 +1,83 @@
+/* ============================================
+   NAV-BAR
+   ============================================ */
+.nav-donations:hover {
+    color: #1e88e5;
+}
+
+.nav-versions:hover,
+.nav-assistance:hover {
+    color: #e53935;
+}
+
+.nav-bar .nav-versions {
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.nav-bar button.nav-home {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;          /* eredita font da .nav-bar */
+    color: inherit;         /* eredita colore da .nav-bar */
+    cursor: pointer;
+    transition: color 0.2s;
+    outline: none;          /* rimuove il focus outline (opzionale) */
+}
+
+.nav-bar button.nav-home:hover {
+    color: #1e88e5;
+}
+
+/* ============================================
+   INTRODUZIONE
+   ============================================ */
+.coming {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 700px;
+    width: 100%;
+    margin-top: 1px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.coming-intro {
+    font-size: 48px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.coming-body {
+    font-size: 16px;
+    font-weight: 400;
+    color: #222;
+    line-height: 1.7;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.coming-body p {
+    margin-bottom: 12px;
+}
+.coming-body p:last-child {
+    margin-bottom: 0;
+}
+
+.coming-body .first { margin-bottom: 25px; }
+.coming-body .second { margin-bottom: 25px; }
+.coming-body .third { margin-bottom: 25px; }
+.coming-body .fourth { margin-bottom: 25px; }
+.coming-body .fifth { margin-bottom: 25px; }
+.coming-body .sixth { margin-bottom: 25px; }
+.coming-body .seventh { margin-bottom: 25px; }
+.coming-body .eighth { margin-bottom: 25px; }
+.coming-body .ninth { margin-bottom: 25px; }
+.coming-body .tenth { margin-bottom: 25px; }
+.coming-body .eleventh { margin-bottom: 25px; }
+.coming-body .twelfth { margin-bottom: 25px; }
+.coming-body .thirteenth { margin-bottom: 25px; }

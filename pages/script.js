@@ -80,7 +80,7 @@ function initDownloadControls() {
 }
 
 // ============================================
-// 5. NAVIGAZIONE – Versions → versions.html
+// 4. NAVIGAZIONE – Versions → versions.html
 // ============================================
 function initNavButtons() {
     const versionsBtn = document.querySelector('.nav-versions');
@@ -93,12 +93,26 @@ function initNavButtons() {
 }
 
 // ============================================
-// 4. AVVIO – esecuzione al caricamento
+// 5. NAVIGAZIONE – Home → index.html (da versions.html)
+// ============================================
+function initHomeButton() {
+    const homeBtn = document.querySelector('.nav-home');
+    if (homeBtn) {
+        homeBtn.addEventListener('click', function() {
+            // Reindirizza alla root (index.html)
+            window.location.href = '../index.html';
+        });
+    }
+}
+
+// ============================================
+// 6. AVVIO – esecuzione al caricamento
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
     initSquares();
     initDownloadControls();
     initNavButtons();
+    initHomeButton();   // ← AGGIUNTO
 });
 
 // Esegue all'avvio e durante lo scroll (con ottimizzazione)
