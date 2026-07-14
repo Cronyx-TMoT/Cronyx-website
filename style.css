@@ -1,5 +1,5 @@
 /* ============================================
-   CARICAMENTO FONT
+   CARICAMENTO FONT (percorsi relativi)
    ============================================ */
 @font-face {
     font-family: 'HK Nova';
@@ -35,7 +35,7 @@ body {
     padding: 0 20px;
     margin: 0;
     min-height: 100vh;
-    padding-bottom: 314vh;
+    padding-bottom: 314vh; /* ← desktop: altezza come prima */
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -136,7 +136,7 @@ body {
 }
 
 /* ============================================
-   NAV-BAR
+   NAV-BAR (base – comune a tutte le pagine)
    ============================================ */
 .nav-bar {
     display: flex;
@@ -250,12 +250,23 @@ body {
 }
 
 /* ============================================
+   SPAZIATORE (visibile solo su mobile)
+   ============================================ */
+.spacer {
+    display: none;  /* nascosto su desktop */
+    width: 100%;
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+/* ============================================
    RESPONSIVE – TABLET (fino a 768px)
    ============================================ */
 @media screen and (max-width: 768px) {
     body {
-        padding-bottom: 250vh; /* prima era 150vh */
+        padding-bottom: 0; /* rimuove padding-bottom su mobile */
     }
+
     .header-img {
         height: 250px;
     }
@@ -295,15 +306,18 @@ body {
         margin-top: 10px;
         margin-bottom: 10px;
     }
+
+    /* Attiva lo spaziatore su tablet */
+    .spacer {
+        display: block;
+        height: 2200px;
+    }
 }
 
 /* ============================================
    RESPONSIVE – MOBILE PICCOLO (≤ 480px)
    ============================================ */
 @media screen and (max-width: 480px) {
-    body {
-        padding-bottom: 200vh; /* prima era 120vh */
-    }
     .header-img {
         height: 150px;
     }
@@ -348,38 +362,9 @@ body {
         margin-top: 8px;
         margin-bottom: 10px;
     }
-    .coming-intro {
-        font-size: 32px;
-    }
-    .coming-body {
-        font-size: 14px;
-        padding-left: 20px;
-    }
-    .download-intro {
-        font-size: 32px;
-    }
-    .download-btn {
-        width: 280px;
-        height: 80px;
-        font-size: 12px;
-        padding: 12px 20px;
-    }
-    .btn-main-text {
-        font-size: 16px;
-    }
-    .btn-sub-text {
-        font-size: 12px;
-    }
-    .windows-logo-wrapper .windows-logo {
-        height: 50px;
-    }
-    .windows-logo-wrapper .apple-logo {
-        height: 28px;
-    }
-    .windows-logo-wrapper {
-        gap: 12px;
-    }
-    .download-body {
-        gap: 8px;
+
+    /* Altezza spaziatore ridotta per schermi molto piccoli */
+    .spacer {
+        height: 1500px;
     }
 }
