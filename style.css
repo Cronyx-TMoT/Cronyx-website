@@ -3,7 +3,7 @@
    ============================================ */
 @font-face {
     font-family: 'HK Nova';
-    src: url('/fonts/hk-nova-semibold-r.ttf') format('truetype');
+    src: url('fonts/hk-nova-semibold-r.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -11,7 +11,7 @@
 
 @font-face {
     font-family: 'HK Nova';
-    src: url('/fonts/hk-nova-bold-r.ttf') format('truetype');
+    src: url('fonts/hk-nova-bold-r.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -250,69 +250,104 @@ body {
 }
 
 /* ============================================
+   RESPONSIVE – TABLET (fino a 768px)
+   ============================================ */
+@media screen and (max-width: 768px) {
+    body {
+        padding-bottom: 250vh; /* prima era 150vh */
+    }
+    .header-img {
+        height: 250px;
+    }
+    .content-wrapper {
+        top: 80px;
+        padding: 0 10px;
+    }
+    .nav-bar {
+        font-size: 14px;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    .logo {
+        font-size: 48px;
+        letter-spacing: 0.5px;
+    }
+    .subtitle {
+        font-size: 18px;
+        margin-left: 0;
+        margin-top: -5px;
+    }
+    .logo-img {
+        height: 100px;
+    }
+    .main-content {
+        padding-left: 5px;
+    }
+    .social-logo {
+        height: 40px;
+    }
+    .social-wrapper {
+        gap: 12px;
+        margin-top: 15px;
+    }
+    .year {
+        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* ============================================
    RESPONSIVE – MOBILE PICCOLO (≤ 480px)
    ============================================ */
 @media screen and (max-width: 480px) {
     body {
-        padding-bottom: 120vh; /* ridotto per evitare blocchi su schermi piccoli */
+        padding-bottom: 200vh; /* prima era 120vh */
     }
-
     .header-img {
-        height: 150px; /* ulteriore riduzione dell'immagine di copertina */
+        height: 150px;
     }
-
     .content-wrapper {
-        top: 55px; /* compensa l'altezza ridotta dell'header */
+        top: 55px;
         padding: 0 8px;
     }
-
     .nav-bar {
         font-size: 12px;
         gap: 4px;
         margin-bottom: 20px;
     }
-
     .logo {
-        font-size: 32px; /* ridotto per adattarsi */
+        font-size: 32px;
         letter-spacing: 0.3px;
     }
-
     .subtitle {
         font-size: 16px;
         margin-left: 0;
         margin-top: -3px;
     }
-
     .logo-img {
-        height: 60px; /* ridotto per evitare sovrapposizioni */
+        height: 60px;
     }
-
     .main-content {
         padding-left: 3px;
         margin-bottom: 0;
-        align-self: center; /* centra il contenuto su mobile */
+        align-self: center;
     }
-
     .text-group {
         gap: 4px;
     }
-
     .social-logo {
         height: 30px;
     }
-
     .social-wrapper {
         gap: 10px;
         margin-top: 10px;
     }
-
     .year {
         font-size: 10px;
         margin-top: 8px;
         margin-bottom: 10px;
     }
-
-    /* Opzionale: riduci anche gli eventuali elementi delle sezioni coming/download */
     .coming-intro {
         font-size: 32px;
     }

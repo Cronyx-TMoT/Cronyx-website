@@ -92,11 +92,11 @@ function initNavButtons() {
 }
 
 // ============================================
-// 5. NAVIGAZIONE – Home → index.html (da versions.html)
+// 5. NAVIGAZIONE – Home → index.html (solo se è un pulsante)
 // ============================================
 function initHomeButton() {
     const homeBtn = document.querySelector('.nav-home');
-    if (homeBtn) {
+    if (homeBtn && homeBtn.tagName === 'BUTTON') {
         homeBtn.addEventListener('click', function() {
             window.location.href = '../index.html';
         });
