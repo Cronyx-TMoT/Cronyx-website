@@ -80,12 +80,11 @@ function initDownloadControls() {
 }
 
 // ============================================
-// 4. NAVIGAZIONE – Versions → versions.html
+// 4. NAVIGAZIONE – Versions → versions.html (solo se è un pulsante)
 // ============================================
 function initNavButtons() {
     const versionsBtn = document.querySelector('.nav-versions');
-    
-    if (versionsBtn) {
+    if (versionsBtn && versionsBtn.tagName === 'BUTTON') {
         versionsBtn.addEventListener('click', function() {
             window.location.href = 'pages/versions.html';
         });
@@ -99,7 +98,6 @@ function initHomeButton() {
     const homeBtn = document.querySelector('.nav-home');
     if (homeBtn) {
         homeBtn.addEventListener('click', function() {
-            // Reindirizza alla root (index.html)
             window.location.href = '../index.html';
         });
     }
@@ -112,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSquares();
     initDownloadControls();
     initNavButtons();
-    initHomeButton();   // ← AGGIUNTO
+    initHomeButton();
 });
 
 // Esegue all'avvio e durante lo scroll (con ottimizzazione)
