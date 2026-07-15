@@ -277,7 +277,7 @@ body {
     }
     .spacer {
         display: block;
-        height: 300vh; /* scroll adattivo alla viewport */
+        height: 500vh; /* maggiore per garantire scroll completo */
     }
 }
 
@@ -330,6 +330,6 @@ body {
         margin-bottom: 10px;
     }
     .spacer {
-        height: 250vh; /* leggermente meno per schermi molto piccoli */
+        height: 400vh; /* maggiore per schermi piccoli */
     }
 }
