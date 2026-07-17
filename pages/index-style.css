@@ -1,4 +1,8 @@
 /* ============================================
+   index-style.css – Stili specifici per index.html
+   ============================================ */
+
+/* ============================================
    NAV-BAR
    ============================================ */
 .nav-home:hover,
@@ -183,7 +187,7 @@
     display: block;
 }
 
-/* ===== Pulsanti di download ===== */
+/* ===== Pulsanti di download (base) ===== */
 .download-btn {
     font-family: 'HK Nova', 'Segoe UI', sans-serif;
     border: none;
@@ -193,7 +197,6 @@
     font-size: 14px;
     font-weight: 600;
     transition: background-color 0.2s, opacity 0.2s;
-  
     width: 360px;
     height: 100px;
     padding: 20px 30px;
@@ -258,4 +261,47 @@
     opacity: 0.8;
     line-height: 1.2;
     margin-top: 2px;
+}
+
+/* ===== Wrapper per pulsante x64 + etichetta "←Recommended" ===== */
+.btn-wrapper {
+    position: relative;          /* per posizionare l'etichetta in modo assoluto */
+    width: 360px;                /* stessa larghezza degli altri pulsanti */
+    align-self: center;          /* centrato come gli altri pulsanti */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Il pulsante all'interno del wrapper occupa tutto lo spazio */
+.btn-wrapper .download-btn {
+    width: 100%;                 /* riempie il wrapper */
+    margin: 0;                   /* rimuove eventuali margini */
+}
+
+/* Etichetta "← Recommended" posizionata a destra */
+.recommended-tag {
+    position: absolute;
+    left: 100%;                  /* posiziona a destra del wrapper */
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 12px;           /* distanza dal pulsante */
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+/* ============================================
+   RESPONSIVE – adattamenti per il wrapper su mobile
+   ============================================ */
+@media screen and (max-width: 480px) {
+    .btn-wrapper {
+        width: 280px;            /* riduci la larghezza per mobile */
+    }
+    .recommended-tag {
+        font-size: 12px;
+        margin-left: 6px;
+    }
 }
