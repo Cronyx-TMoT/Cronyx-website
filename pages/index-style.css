@@ -23,11 +23,11 @@
     background: none;
     border: none;
     padding: 0;
-    font: inherit;          /* eredita font da .nav-bar */
-    color: inherit;         /* eredita colore da .nav-bar */
+    font: inherit;
+    color: inherit;
     cursor: pointer;
     transition: color 0.2s;
-    outline: none;          /* rimuove il focus outline (opzionale) */
+    outline: none;
 }
 
 .nav-bar button.nav-versions:hover {
@@ -263,45 +263,92 @@
     margin-top: 2px;
 }
 
-/* ===== Wrapper per pulsante x64 + etichetta "←Recommended" ===== */
+/* ===== Wrapper per pulsante x64 + etichette ===== */
 .btn-wrapper {
-    position: relative;          /* per posizionare l'etichetta in modo assoluto */
-    width: 360px;                /* stessa larghezza degli altri pulsanti */
-    align-self: center;          /* centrato come gli altri pulsanti */
+    position: relative;
+    width: 360px;
+    align-self: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* padding-bottom rimosso: lo spazio è gestito solo dall'etichetta visibile */
 }
 
-/* Il pulsante all'interno del wrapper occupa tutto lo spazio */
 .btn-wrapper .download-btn {
-    width: 100%;                 /* riempie il wrapper */
-    margin: 0;                   /* rimuove eventuali margini */
+    width: 100%;
+    margin: 0;
 }
 
-/* Etichetta "← Recommended" posizionata a destra */
+/* ---- Etichette Recommended – visibilità per dispositivo ---- */
+
+/* Default (desktop): mostra ← Recommended, nasconde ↑ Recommended ↑ */
 .recommended-tag {
     position: absolute;
-    left: 100%;                  /* posiziona a destra del wrapper */
-    top: 50%;
+    left: 100%;
+    top: 40%;
     transform: translateY(-50%);
-    margin-left: 12px;           /* distanza dal pulsante */
+    margin-left: 12px;
     font-size: 14px;
     font-weight: 400;
     color: #666;
     white-space: nowrap;
     line-height: 1.2;
+    display: block; /* visibile su desktop */
+}
+
+.recommended-bottom {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    margin-top: 4px;       /* distanza dal pulsante solo quando visibile */
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    white-space: nowrap;
+    line-height: 1.2;
+    display: none; /* nascosto su desktop */
+}
+
+/* Nascondi le etichette Recommended quando i pulsanti sono nascosti */
+.download-buttons.hidden .btn-wrapper .recommended-tag,
+.download-buttons.hidden .btn-wrapper .recommended-bottom {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
 }
 
 /* ============================================
-   RESPONSIVE – adattamenti per il wrapper su mobile
+   RESPONSIVE – MOBILE (≤ 768px)
+   ============================================ */
+@media screen and (max-width: 768px) {
+    /* Su mobile: nascondi ← Recommended, mostra ↑ Recommended ↑ */
+    .recommended-tag {
+        display: none;
+    }
+    .recommended-bottom {
+        display: block;
+    }
+
+    /* Adattamenti per il wrapper su tablet/mobile */
+    .btn-wrapper {
+        width: 280px;
+    }
+    .recommended-bottom {
+        font-size: 12px;
+        margin-top: 2px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE – MOBILE PICCOLO (≤ 480px)
    ============================================ */
 @media screen and (max-width: 480px) {
     .btn-wrapper {
-        width: 280px;            /* riduci la larghezza per mobile */
+        width: 260px;
     }
-    .recommended-tag {
-        font-size: 12px;
-        margin-left: 6px;
+    .recommended-bottom {
+        font-size: 11px;
+        margin-top: 1px;
     }
 }
